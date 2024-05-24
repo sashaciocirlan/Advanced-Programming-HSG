@@ -1,10 +1,18 @@
-# AI-Powered Weather Forecast Summaries
+# WeatherSummaryApp
+## Group ID: 3335
 
 ## Project Overview
 We set out to create a weather summary application that provides detailed and entertaining weather reports for any city/location entered by the user. Our goal was to develop a tool that not only fetches and analyzes weather data but also presents it in a user-friendly and engaging format. It therefore generates multimedia content by combining weather summaries with images and audio, culmniating in some kind of video forecast.
 
 The core of our project is built around the WeatherSummaryApp class, which follows object-oriented programming principles. This class integrates several APIs, such as Google Maps for geolocation, Open-Meteo for weather data, and OpenAI for generating text, audio, and images. The Python file WeatherSummaryApp.py includes the full implementation of this class and its methods.
 
+## Features
+1. **Fetch Coordinates**: Retrieves the geographical coordinates (latitude and longitude) of a city using the Google Maps API.
+2. **Fetch Weather Data**: Retrieves hourly and daily weather data for the specified coordinates using the Open-Meteo API.
+3. **Generate Weather Summary**: Creates a concise and engaging weather report using OpenAI's GPT model.
+4. **Text-to-Audio Conversion**: Converts the generated weather summary text to speech using OpenAI's text-to-speech API.
+5. **Image Generation**: Generates an image illustrating the current weather conditions using OpenAI's DALL-E model.
+6. **Video Creation**: Combines the generated audio and image into an MP4 video file using the MoviePy library.
 
 ### Technology Stack
 - **Programming Language**: Python
@@ -37,18 +45,57 @@ The core of our project is built around the WeatherSummaryApp class, which follo
    - **Function**: Combines the audio and image into a video format.
    - **Output**: Video file of the weather summary.
 
-## Declaration of aiding material
-   - We used ChatGPT to help us correcting our code.
-   - We used YouTube Tutorials to help us implement certain features.
-
 ## Installation and Setup
 
 ### Prerequisites
+- Python 3.8
+- API keys for Google Maps and OpenAI. If you need to connect to an API key with credits to access OpenAI, please get in touch with our team member Nikola (nikola.bulatovic@student.unisg.ch).
 
-- Ensure you have Python 3.8+ installed on your system. 
-- You will also need API keys for Google Maps, Free Meteo, and OpenAI. If you need to connect to an API key with credits to access OpenAI, please get in touch with our team member Nikola (nikola.bulatovic@student.unisg.ch).
+### Required Libraries
+Install the required Python libraries using pip:
+
+```
+pip install requests requests_cache pandas retry_requests openai moviepy
+```
 
 ### Clone the Repository
 ```bash
 git clone https://github.com/yourusername/ai-audio-weather.git
 cd ai-audio-weather
+```
+
+## Usage
+-----
+
+1. Obtain API Keys:
+   - Get a Google Maps API key from the Google Cloud Console.
+   - Get an OpenAI API key from the OpenAI API Keys page. If you need to connect to an API key with credits to access OpenAI, please get in touch with our team member Nikola (nikola.bulatovic@student.unisg.ch).
+
+
+2. Initialize the Application:
+   Create an instance of the WeatherSummaryApp class by providing your Google Maps and OpenAI API keys.
+
+3. Run the Application:
+   Call the `run` method with the name of the city you want to generate the weather summary for.
+
+### Example Usage
+
+```python
+if __name__ == "__main__":
+    google_maps_key = 'YOUR_GOOGLE_MAPS_API_KEY'
+    openai_key = 'YOUR_OPENAI_API_KEY'
+    app = WeatherSummaryApp(google_maps_key, openai_key)
+    city = input("Enter the city for the weather summary: ")
+    app.run(city)
+```
+
+## Error handling
+The application includes error handling to manage issues such as invalid city names, API request failures, and other exceptions. If an error occurs, the user will be prompted to run the application again with a valid city name.
+
+## Contribution
+Contributions to improve the application are welcome. Please fork the repository, make your changes, and submit a pull request.
+
+
+## Declaration of aiding material
+   - We used ChatGPT to help us correct our code.
+   - StackOverflow references were made in the code if used as an inspiration.
