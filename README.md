@@ -60,6 +60,8 @@ Develop a user-friendly application that allows users to obtain audio weather fo
 
 Ensure you have Python 3.8+ installed on your system. You will also need API keys for Google Maps, Free Meteo, and OpenAI.
 
+If you need to connect to an API key with credits to access OpenAI, please get in touch with our team member Nikola (nikola.bulatovic@student.unisg.ch).
+
 ### Clone the Repository
 
 ```bash
